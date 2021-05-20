@@ -7,8 +7,8 @@ import manaba
 
 def post_get_tasks(request: Request) -> Response:
 
-    userid: str
-    password: str
+    userid: str = ""
+    password: str = ""
 
     request_json = request.get_json(silent=True)
     request_args = request.args
@@ -19,6 +19,8 @@ def post_get_tasks(request: Request) -> Response:
     elif request_args and 'userid' in request_args and 'password' in request_args:
         userid = request_args['userid']
         password = request_args['password']
+    else:
+        return jsonify({"result": ""})
 
     # {"userid": userid, "password": password}
     time.sleep(0.5)
