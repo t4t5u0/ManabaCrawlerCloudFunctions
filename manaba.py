@@ -1,8 +1,8 @@
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 
 import requests as rq
 from bs4 import BeautifulSoup, element
-from datetime import datetime, timedelta, timezone
 
 
 @dataclass
